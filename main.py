@@ -17,6 +17,7 @@ import numpy as np
 import torch
 import mysql.connector
 import time
+import multiprocessing
 
 def report(liscense, lat, long):
     amberdb = mysql.connector.connect(host='sql5.freesqldatabase.com', user='sql5473936', passwd='43NA67P5Aw', database='sql5473936')
@@ -129,6 +130,8 @@ app.layout = html.Div([
 
 def parse_contents(contents, filename, date):
     b64 = contents[contents.index('base64,')+7:]
+    print(contents[0:40])
+    print(contents[len(contents)-40:])
     base64_decoded = base64.b64decode(b64)
 
     image = Image.open(io.BytesIO(base64_decoded))
