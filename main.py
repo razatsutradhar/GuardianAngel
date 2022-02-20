@@ -192,7 +192,7 @@ def parse_contents(contents, filename, date):
 @app.callback(Output('output-image-upload', 'children'),
               Input('upload-image', 'contents'),
               State('upload-image', 'filename'),
-              State('upload-image', 'last_modified'))
+              State('upload-image', 'last_modified'), prevent_initial_call=True)
 def update_output(list_of_contents, list_of_names, list_of_dates):
     if list_of_contents is not None:
         children = [
