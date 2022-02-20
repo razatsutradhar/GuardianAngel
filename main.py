@@ -1,23 +1,17 @@
-import io
-
-import PIL
-import cv2
-import exif
-import matplotlib.image
-from matplotlib import pyplot as plt
-import matplotlib.image as mpimg
-import numpy as np
-import imutils
-import easyocr
-import base64
-from PIL import Image
 import base64
 import io
-import numpy as np
-import torch
-import mysql.connector
 import time
-import multiprocessing
+
+import cv2
+import easyocr
+# import matplotlib.image as mpimg
+import imutils
+import mysql.connector
+import numpy as np
+from PIL import Image
+
+from matplotlib import pyplot as plt
+
 
 def report(liscense, lat, long):
     amberdb = mysql.connector.connect(host='sql5.freesqldatabase.com', user='sql5473936', passwd='43NA67P5Aw', database='sql5473936')
@@ -97,8 +91,6 @@ def read_text(img):
     result = reader.readtext(img)
     return result
 
-
-import datetime
 
 from dash import Dash, dcc, html
 from dash.dependencies import Input, Output, State
