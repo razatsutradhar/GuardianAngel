@@ -189,7 +189,7 @@ def parse_contents(contents, filename, date):
         })
     ])
 
-@app.long_callback(Output('output-image-upload', 'children'),
+@app.callback(Output('output-image-upload', 'children'),
               Input('upload-image', 'contents'),
               State('upload-image', 'filename'),
               State('upload-image', 'last_modified'), prevent_initial_call=True)
