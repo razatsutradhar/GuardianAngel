@@ -189,7 +189,7 @@ def parse_contents(contents, filename, date):
         })
     ])
 
-@app.callback(Output('output-image-upload', 'children'),
+@app.long_callback(Output('output-image-upload', 'children'),
               Input('upload-image', 'contents'),
               State('upload-image', 'filename'),
               State('upload-image', 'last_modified'), prevent_initial_call=True)
@@ -201,7 +201,7 @@ def update_output(list_of_contents, list_of_names, list_of_dates):
         return children
 
 if __name__ == '__main__':
-    app.run_server(debug=True, host='0.0.0.0', port=8080, prevent_initial_callbacks=True)
+    app.run_server(debug=True, host='0.0.0.0', port=8080)
 
 
 
