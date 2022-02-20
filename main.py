@@ -81,13 +81,15 @@ def get_plates(img):
         (x2, y2) = (np.max(x), np.max(y))
 
         cropped = gray[x1:x2 + 1, y1:y2 + 1]
+        process(cropped)
         possiblePlates.append([cropped, location])
+    plt.show()
     return possiblePlates
 
 #
-# def process(image) -> None:
-#     plt.figure()
-#     plt.imshow(cv2.cvtColor(image, cv2.COLOR_BGR2RGB))
+def process(image) -> None:
+    plt.figure()
+    plt.imshow(cv2.cvtColor(image, cv2.COLOR_BGR2RGB))
 
 
 def read_text(img):
