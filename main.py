@@ -97,7 +97,7 @@ from dash.dependencies import Input, Output, State
 
 external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
 
-app = Dash(__name__, external_stylesheets=external_stylesheets)
+app = Dash(__name__, external_stylesheets=external_stylesheets, prevent_initial_callbacks=True)
 
 app.layout = html.Div([
     dcc.Upload(
